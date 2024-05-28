@@ -20,7 +20,6 @@ defineProps<EmployeeProps>();
 article {
   padding: 10px;
   border-radius: 8px;
-  background-color: aqua;
   width: 200px;
   display: flex;
   align-items: center;
