@@ -1,3 +1,4 @@
+import type { IEmployee } from "@/models/IEmployee";
 import type { IEmployeeResponse } from "../models/IEmployeeResponse";
 import { get } from "./serviceBase";
 
