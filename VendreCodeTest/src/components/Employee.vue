@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IEmployee } from "@/models/IEmployee";
+import { IEmployee } from "../models/IEmployee";
 
 interface EmployeeProps {
   employee: IEmployee;
@@ -8,6 +8,12 @@ interface EmployeeProps {
 defineProps<EmployeeProps>();
 </script>
 
-<template></template>
+<template>
+  <article>
+    <img src="" alt="" />
+    <h2></h2>
+    <p></p>
+  </article>
+</template>
 
 <style scoped></style>
