@@ -2,7 +2,9 @@
 import { getEmployees } from "./services/employeeService";
 import Employee from "./components/Employee.vue";
 import EmployeeDisplay from "./components/EmployeeDisplay.vue";
+import FooterComp from "./components/FooterComp.vue";
 import HeaderComp from "./components/HeaderComp.vue";
+
 import { IEmployee } from "./models/IEmployee";
 </script>
 
@@ -10,6 +12,7 @@ import { IEmployee } from "./models/IEmployee";
   <div>
     <HeaderComp></HeaderComp>
     <EmployeeDisplay></EmployeeDisplay>
+    <FooterComp></FooterComp>
   </div>
 </template>
 
