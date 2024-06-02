@@ -34,38 +34,22 @@ header {
   height: calc(34px + 23px * 2);
   backdrop-filter: blur(10px);
   z-index: 10;
-}
 
-ul {
-  display: flex;
+  .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+    margin: 0 40px;
 
-  li {
-    color: $dark-text-color;
-    list-style-type: none;
-    float: right;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 8px;
-    &:hover {
-      background-color: $secondary-color;
+    .logo {
+      z-index: 16;
+      position: relative;
+      display: flex;
+      height: 48px;
+      width: 170px;
     }
   }
-}
-
-.flex-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  margin: 0 40px;
-}
-
-.logo {
-  z-index: 16;
-  position: relative;
-  display: flex;
-  height: 48px;
-  width: 170px;
 }
 
 .menu-button {
@@ -84,6 +68,21 @@ ul {
 nav {
   display: flex;
   flex-direction: row;
+  ul {
+    display: flex;
+
+    li {
+      color: $dark-text-color;
+      list-style-type: none;
+      float: right;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 8px;
+      &:hover {
+        background-color: $secondary-color;
+      }
+    }
+  }
 }
 
 @media (max-width: 1024px) {
@@ -110,6 +109,7 @@ nav {
 
   ul {
     flex-direction: column;
+    padding-left: 0;
     li {
       margin: 20px 0;
     }

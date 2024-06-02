@@ -44,6 +44,11 @@ onMounted(async () => {
 <style lang="scss" scoped>
 @import "../assets/scss/__variables.scss";
 
+section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 h1 {
   display: flex;
   justify-content: center;
@@ -54,6 +59,7 @@ h1 {
   font-size: 3rem;
   font-weight: 600;
   letter-spacing: -0.5px;
+  word-wrap: break-word;
 }
 
 p {
@@ -63,9 +69,6 @@ p {
 }
 
 .employees {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   width: 75%;
   max-width: 1100px;
 }

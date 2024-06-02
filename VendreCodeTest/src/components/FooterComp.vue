@@ -57,22 +57,21 @@ footer {
   background: $primary-color;
   min-height: 300px;
   backdrop-filter: blur(10px);
-}
+  .flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: calc(100% - 30px);
+    margin: 0 40px;
+    color: $light-text-color;
 
-.flex-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: calc(100% - 30px);
-  margin: 0 40px;
-  color: $light-text-color;
-}
-
-.logo {
-  position: relative;
-  left: 5%;
-  height: 48px;
-  width: 170px;
+    .logo {
+      position: relative;
+      left: 5%;
+      height: 48px;
+      width: 170px;
+    }
+  }
 }
 
 nav {
@@ -83,6 +82,9 @@ nav {
 
   div {
     margin: 40px;
+    h2 {
+      font-weight: 600;
+    }
     ul {
       margin: 0;
       padding: 0;
@@ -102,12 +104,18 @@ nav {
   left: 0;
   padding: 10px 0;
   color: $dark-text-color;
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 @media (max-width: 1024px) {
+  .flex-container {
+    text-align: center;
+  }
   nav {
     flex-direction: column;
+    text-align: center;
+    width: 100%;
+    margin: auto;
   }
 }
 </style>
