@@ -20,6 +20,29 @@
           ></path>
         </svg>
       </div>
+      <nav>
+        <div>
+          <h2>Lorem</h2>
+          <ul>
+            <li v-for="li in 4" :key="li">Lorem</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Ipsum</h2>
+          <ul>
+            <li v-for="li in 4" :key="li">Ipsum</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Lorem Ipsum</h2>
+          <ul>
+            <li v-for="li in 3" :key="li">Lorem Ipsum</li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <div class="copyright">
+      <p>All rights reserved ©2024</p>
     </div>
   </footer>
 </template>
@@ -28,25 +51,63 @@
 @import "../assets/scss/__variables.scss";
 footer {
   position: relative;
-  bottom: 0;
-  padding: 20px 0 10px 10px;
+  padding: 0 0 10px 10px;
+  margin-top: 50px;
   width: 100%;
   background: $primary-color;
-  height: 300px;
+  min-height: 300px;
   backdrop-filter: blur(10px);
 }
 
 .flex-container {
   display: flex;
   align-items: center;
-  height: 100%;
+  justify-content: space-between;
+  height: calc(100% - 30px);
   margin: 0 40px;
+  color: $light-text-color;
 }
 
 .logo {
   position: relative;
-  display: flex;
+  left: 5%;
   height: 48px;
   width: 170px;
+}
+
+nav {
+  display: flex;
+  margin-right: 10%;
+  width: 50%;
+  justify-content: space-between;
+
+  div {
+    margin: 40px;
+    ul {
+      margin: 0;
+      padding: 0;
+      li {
+        list-style: none;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 10px 0;
+  color: $dark-text-color;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+@media (max-width: 1024px) {
+  nav {
+    flex-direction: column;
+  }
 }
 </style>

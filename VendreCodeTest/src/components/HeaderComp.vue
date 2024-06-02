@@ -40,6 +40,7 @@ ul {
   display: flex;
 
   li {
+    color: $dark-text-color;
     list-style-type: none;
     float: right;
     margin: 10px;
@@ -71,7 +72,7 @@ ul {
   display: none;
   border-radius: 5px;
   background-color: $primary-color;
-  color: white;
+  color: $light-text-color;
   padding: 10px;
   border: none;
   cursor: pointer;
