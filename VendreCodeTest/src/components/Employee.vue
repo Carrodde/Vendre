@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { IEmployee } from "../models/IEmployee";
+import type { IEmployee } from "../models/IEmployee";
 
 interface EmployeeProps {
   employee: IEmployee;
@@ -11,7 +11,7 @@ defineProps<EmployeeProps>();
 <template>
   <article>
     <div class="img-container">
-      <img :src="employee.avatar" :alt="employee.frist_name" />
+      <img :src="employee.avatar" :alt="employee.first_name" />
     </div>
     <h2>{{ employee.first_name }} {{ employee.last_name }}</h2>
     <a :href="`mailto:${employee.email}`">Kontakta mig</a>

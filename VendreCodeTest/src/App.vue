@@ -5,7 +5,7 @@ import EmployeeDisplay from "./components/EmployeeDisplay.vue";
 import FooterComp from "./components/FooterComp.vue";
 import HeaderComp from "./components/HeaderComp.vue";
 
-import { IEmployee } from "./models/IEmployee";
+import type { IEmployee } from "./models/IEmployee";
 </script>
 
 <template>

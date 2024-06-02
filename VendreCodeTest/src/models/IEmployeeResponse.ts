@@ -2,5 +2,5 @@ import type { IEmployee } from "./IEmployee";
 
 export interface IEmployeeResponse {
   data: IEmployee[];
-  totalPages: number;
+  total_pages: number;
 }

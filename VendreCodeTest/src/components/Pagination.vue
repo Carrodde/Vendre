@@ -6,14 +6,15 @@ const currentPage = ref(1);
 
 const updatePage = (page: number) => {
   currentPage.value = page;
-  emit("updatePage", page);
+  // @ts-ignore
+  $emit("updatePage", page);
 };
 </script>
 
 <template>
   <div class="pagination">
     <button>Prev</button>
-    <span> {{ currentPage.value }}</span>
+    <span> {{ currentPage }}</span>
     <button>Next</button>
   </div>
 </template>

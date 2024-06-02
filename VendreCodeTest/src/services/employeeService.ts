@@ -8,6 +8,7 @@ export const getEmployees = async (
   page: number
 ): Promise<{ data: IEmployee[]; totalPages: number }> => {
   const response = await get<IEmployeeResponse>(`${BASE_URL}?page=${page}`);
+  console.log(response);
   return {
     data: response.data,
     totalPages: response.total_pages,

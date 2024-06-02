@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from "vue";
-import { IEmployee } from "../models/IEmployee";
+import type { IEmployee } from "../models/IEmployee";
 import { getEmployees } from "../services/employeeService";
 import Employee from "./Employee.vue";
 
@@ -8,10 +8,10 @@ const employees = ref<IEmployee[]>([]);
 const currentPage = ref(1);
 const totalPages = ref(1);
 
-const fetchEmployees = async (page) => {
+const fetchEmployees = async (page: number) => {
   try {
     const response = await getEmployees(page);
-    employees.value = response;
+    employees.value = response.data;
     totalPages.value = response.totalPages;
     console.log(response);
   } catch (error) {
@@ -56,7 +56,7 @@ const previousPage = () => {
 
     <section class="employees">
       <Employee
-        v-for="employee in employees.data"
+        v-for="employee in employees"
         :key="employee.id"
         :employee="employee"
       />
