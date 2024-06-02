@@ -47,6 +47,7 @@ onMounted(async () => {
 h1 {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   width: 100%;
   margin: 40px auto;
   color: $dark-text-color;
@@ -58,6 +59,7 @@ h1 {
 p {
   margin: 30px auto;
   width: 50%;
+  font-size: 1.2rem;
 }
 
 .employees {
