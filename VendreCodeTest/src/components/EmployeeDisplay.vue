@@ -1,21 +1,44 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
+import { ref, onMounted } from "vue";
 import { IEmployee } from "../models/IEmployee";
 import { getEmployees } from "../services/employeeService";
 import Employee from "./Employee.vue";
 
 const employees = ref<IEmployee[]>([]);
+const currentPage = ref(1);
+const totalPages = ref(1);
 
-onMounted(async () => {
+const fetchEmployees = async (page) => {
   try {
-    const response = await getEmployees();
+    const response = await getEmployees(page);
     employees.value = response;
-    console.log(employees.value);
+    totalPages.value = response.totalPages;
+    console.log(response);
   } catch (error) {
     console.error("Error fetching employees:", error);
+    employees.value = [];
   }
+};
+
+onMounted(() => {
+  fetchEmployees(currentPage.value);
 });
+
+const nextPage = () => {
+  if (currentPage.value < totalPages.value) {
+    currentPage.value++;
+    fetchEmployees(currentPage.value);
+  }
+};
+
+const previousPage = () => {
+  if (currentPage.value > 1) {
+    currentPage.value--;
+    fetchEmployees(currentPage.value);
+  }
+};
 </script>
+
 <template>
   <div>
     <section>
@@ -33,10 +56,20 @@ onMounted(async () => {
 
     <section class="employees">
       <Employee
-        v-for="employee in employees"
+        v-for="employee in employees.data"
         :key="employee.id"
         :employee="employee"
       />
+    </section>
+
+    <section class="pagination">
+      <button @click="previousPage" :disabled="currentPage === 1">
+        Previous
+      </button>
+      <span>Page {{ currentPage }} of {{ totalPages }}</span>
+      <button @click="nextPage" :disabled="currentPage === totalPages">
+        Next
+      </button>
     </section>
   </div>
 </template>
@@ -71,5 +104,33 @@ p {
 .employees {
   width: 75%;
   max-width: 1100px;
+}
+
+.pagination {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  color: $dark-text-color;
+
+  button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    background-color: $primary-color;
+    color: $light-text-color;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:disabled {
+      background-color: gray;
+      cursor: not-allowed;
+    }
+  }
+
+  span {
+    margin: 0 10px;
+    font-size: 1.2rem;
+  }
 }
 </style>

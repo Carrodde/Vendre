@@ -37,6 +37,9 @@ article {
 }
 img {
   border-radius: 50%;
+  height: 128px;
+  width: 128px;
+  object-fit: cover;
 }
 a {
   border-radius: 3px;
